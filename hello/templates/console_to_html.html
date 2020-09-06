@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block content %}
+{% load static %}
+<div id="log"></div>
+<a href="{% static "console_to_html/console_to_html.js" %}"><button type="button" name="button" class="btn btn-outline-success">GET the SCRIPT</button></a>
+<!-- SCRIPT FOR TRANSFERRING THE LOG TO DIV ELEMENT -->
+<script type="text/javascript" src="{% static "console_to_html/console_to_html.js" %}"></script>
+{% endblock %}

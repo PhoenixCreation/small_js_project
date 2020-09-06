@@ -1,0 +1,27 @@
+{% extends 'layout.html'%}
+{% block content %}
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+<script src="{% static "image_recognition/imagenet_classes.js"%}"></script>
+
+<div class="container-fluid" style="background-color: red;">
+
+  <section>
+    <p class='section-head'>Status</p>
+    <div id="status"></div>
+  </section>
+
+  <section>
+    <p class='section-head'>Model Output</p>
+
+
+    <div id="predictions"></div>
+
+    <img style="display: none" id="cat" src="{% static "Images/cat.jpg" %}" width=224 height=224 />
+  </section>
+  <script src="{% static "image_recognition/image_recognition.js" %}"></script>
+
+</div>
+<a href="{% static "image_recognition/image_recognition.js" %}"><button type="button" name="button" class="btn btn-outline-success">GET the SCRIPT</button></a>
+
+{%endblock%}

@@ -1,0 +1,20 @@
+{% extends 'layout.html'%}
+{% block content%}
+{% load static%}
+<div class="container-fluid">
+
+  <button type="button" name="button" id="voice" class="btn btn-outline-success">
+    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-mic-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"/>
+      <path fill-rule="evenodd" d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+    </svg>
+  </button>
+  <div class="output-box" id="op"></div>
+
+  <!-- SCRIPT THAT EXECUTES VOICE SEARCH -->
+  <script type="text/javascript" src="{% static "voice_search/voice_search.js"%}"></script>
+
+  <a href="{% static "voice_search/voice_search.js" %}"><button type="button" name="button" class="btn btn-outline-success">GET the SCRIPT</button></a>
+
+</div>
+{%endblock%}

@@ -1,19 +1,24 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Greeting
+from django.urls import get_resolver
 
 # Create your views here.
 def index(request):
-    # return HttpResponse('Hello from Python!')
-    return render(request, "index.html")
+    site = get_resolver().url_patterns
+    data = []
+    for value in site:
+        data.append(value.name)
+    info = {
+        "data": data
+    }
+    return render(request, "index.html",context=info)
 
+def voice_search(request):
+    return render(request, "voice_search.html")
 
-def db(request):
+def image_recognition(request):
+    return render(request, "image_recognition.html")
 
-    greeting = Greeting()
-    greeting.save()
-
-    greetings = Greeting.objects.all()
-
-    return render(request, "db.html", {"greetings": greetings})
+def console_to_html(request):
+    return render(request,"console_to_html.html")
